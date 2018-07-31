@@ -9,9 +9,9 @@ import { Validators } from '@angular/forms';
 })
 export class AppComponent {
 
-  profileForm:FormGroup
+  reactiveform:FormGroup
   constructor(){
-  this.profileForm = new FormGroup({
+  this.reactiveform= new FormGroup({
 
     firstname : new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]*'),]),
     lastname : new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]*'),]),

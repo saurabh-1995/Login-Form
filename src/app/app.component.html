@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>
+      Lofin-Form
+    </title>
+  </head>
+  <h1>Login Form</h1><br/><br/><br/>
+  <body>
+<form [formGroup]="reactiveform" (ngSubmit)="onSubmit()">
+  <label>
+    First Name:
+    <input type="text" formControlName="firstname" placeholder="First Name"/>
+    <span *ngIf = "!reactiveform.controls['firstname'].valid">Enter name is Invalid</span>
+    
+    &nbsp;&nbsp;
+</label><br/><br/>
+<label>
+    Last Name:
+    <input type="text" formControlName="lastname" placeholder="Last Name" />
+    <span *ngIf = "!reactiveform.controls['lastname'].valid">*</span>
+</label><br/><br/>
+<label>
+    Email-ID:
+    <input type="text"  formControlName="emailid" placeholder="Email-ID" />
+    <span *ngIf = "!reactiveform.controls['emailid'].valid">*</span>
+    
+</label><br/><br/>
+<label>
+    Contact No.:
+    <input type="text"  formControlName="contactno" placeholder="Contact No." />
+    <span *ngIf = "!reactiveform.controls['contactno'].valid">*</span>
+</label><br/><br/>
+<label>
+    Password:
+    <input type="text"  formControlName="password" placeholder="Password" />
+    <span *ngIf = "!reactiveform.controls['password'].valid">*</span>
+    &nbsp;
+</label><br/><br/>
+<label>
+    Confirm Password:
+    <input type="text"  formControlName="confirmpassword" placeholder="Confirm Password" />
+    <span *ngIf = "!reactiveform.controls['confirmpassword'].valid">*</span>
+</label><br/><br/>
+<label>
+    Gender:
+    <input type="text"  formControlName="gender" placeholder="Gender" />
+    <span *ngIf = "!reactiveform.controls['gender'].valid">*</span>
+</label><br/><br/>
+<label>
+    Emp-ID:
+    <input type="text"  formControlName="empid" placeholder="Emp-ID" />
+    <span *ngIf = "!reactiveform.controls['empid'].valid">*</span>
+</label><br/><br/>&nbsp;
+<button type="submit" [disabled]="!reactiveform.valid">Click me</button>
+</form>
+</body>
+</html>
