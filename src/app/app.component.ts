@@ -10,6 +10,20 @@ import { Validators } from '@angular/forms';
 export class AppComponent {
 
   reactiveform:FormGroup
+  
+  formdata(){
+    localStorage.setItem("database",JSON.stringify(this.reactiveform.value));
+  }
+  password_verify() {
+    if(this.reactiveform.value.password !== this.reactiveform.value.confirmpassword)
+    {
+      console.log("incorrect");
+    }
+    else
+    {
+      console.log("correct");
+    }
+  }
   constructor(){
   this.reactiveform= new FormGroup({
 
