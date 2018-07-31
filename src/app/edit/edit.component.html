@@ -1,0 +1,57 @@
+<html>
+  <head>
+    <title>
+      Login-Form
+    </title>
+  </head>
+  <h1>Login Form</h1><br/><br/><br/>
+  <body>
+<form [formGroup]="reactiveform">
+  <label>
+    First Name:
+    <input type="text" formControlName="firstname" placeholder="First Name"/>
+    <div *ngIf = "!reactiveform.controls['firstname'].invalid">Entered name is Valid</div>
+    <div *ngIf = "!reactiveform.controls['firstname'].valid">Entered name is Invalid</div>
+    &nbsp;&nbsp;
+</label><br/>
+<label>
+    Last Name:
+    <input type="text" formControlName="lastname" placeholder="Last Name" />
+    <div *ngIf = "!reactiveform.controls['lastname'].invalid">Entered name is Valid</div>
+    <div *ngIf = "!reactiveform.controls['lastname'].valid">Entered name is Invalid</div>
+</label><br/>
+<label>
+    Email-ID:
+    <input type="text"  formControlName="emailid" placeholder="Email-ID" />
+    <div *ngIf = "!reactiveform.controls['emailid'].valid">Entered Email is Incorrect</div>
+</label><br/>
+<label>
+    Contact No.:
+    <input type="text"  formControlName="contactno" placeholder="Contact No." />
+    <div *ngIf = "!reactiveform.controls['contactno'].valid">Entered No. is Incorrect</div>
+</label><br/>
+<label>
+    Password:
+    <input type="password"  formControlName="password" placeholder="Password" />
+    <div *ngIf = "!reactiveform.controls['password'].valid">Entered Password is Invalid</div>
+    &nbsp;
+</label><br/>
+<label>
+    Confirm Password:
+    <input type="password"  formControlName="confirmpassword" (keyup)="password_verify()" placeholder="Confirm Password" />
+    <div *ngIf = "!reactiveform.controls['confirmpassword'].valid"></div>
+</label><br/>
+<label>
+    Gender:
+    <input type="text"  formControlName="gender" placeholder="Gender" />
+    <div *ngIf = "!reactiveform.controls['gender'].valid">Male/Female/None</div>
+</label><br/>
+<label>
+    Emp-ID:
+    <input type="text"  formControlName="empid" placeholder="Emp-ID" />
+    <div *ngIf = "!reactiveform.controls['empid'].valid">Entered Employee ID is Incorrect</div>
+</label><br/>&nbsp;
+<button type="submit" [disabled]="!reactiveform.valid" (click)=formdata() >Click me</button>
+</form>
+</body>
+</html>
