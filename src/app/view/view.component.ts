@@ -11,6 +11,7 @@ export class ViewComponent implements OnInit {
 
   constructor() { 
     this.viewdata = JSON.parse(localStorage.getItem("database"));
+    
   }
 
   ngOnInit() {

@@ -12,11 +12,10 @@ import { from } from '../../../node_modules/rxjs';
 export class EditComponent implements OnInit {
 
   reactiveform:FormGroup
-  routes: any;
   
   formdata(){
     localStorage.setItem("database",JSON.stringify(this.reactiveform.value));
-    this.routes.navigate(["/editform"]);
+    this.routes.navigate(["/displayform"]);
   }
   password_verify() {
     if(this.reactiveform.value.password !== this.reactiveform.value.confirmpassword)
@@ -29,7 +28,7 @@ export class EditComponent implements OnInit {
     }
   }
 
-  constructor() {
+  constructor(private routes:Router) {
     this.reactiveform= new FormGroup({
 
       firstname : new FormControl('',[Validators.required,Validators.pattern('[a-zA-Z]*'),]),
