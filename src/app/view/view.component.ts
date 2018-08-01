@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '../../../node_modules/@angular/router';
 
 @Component({
   selector: 'app-view',
@@ -9,11 +10,13 @@ export class ViewComponent implements OnInit {
 
   viewdata;
 
-  constructor() { 
+  constructor(private routes:Router) { 
     this.viewdata = JSON.parse(localStorage.getItem("database"));
     
   }
-
+  editdata() {
+    this.routes.navigate(["/editform"])
+  }
   ngOnInit() {
   }
   
