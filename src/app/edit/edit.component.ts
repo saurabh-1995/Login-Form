@@ -39,7 +39,7 @@ export class EditComponent implements OnInit {
 
       firstname: new FormControl('', [Validators.required, Validators.minLength(2), Validators.pattern('[a-zA-Z]*'),]),
       lastname: new FormControl('', [Validators.required, Validators.minLength(3), Validators.pattern('[a-zA-Z]*'),]),
-      emailid: new FormControl('', [Validators.required, Validators.email, Validators.pattern('^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$')]),
+      emailid: new FormControl('', [Validators.required, Validators.email, Validators.pattern('^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*$')]),
       contactno: new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(10)]),
       password: new FormControl('', [Validators.required, Validators.minLength(8), Validators.maxLength(16), Validators.pattern('^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$')]),
       confirmpassword: new FormControl('', [Validators.required,]),

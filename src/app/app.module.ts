@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { EditComponent } from './edit/edit.component';
 import { ViewComponent } from './view/view.component';
 import { FormService } from './form.service';
-import { ObserverComponent } from './observer/observer.component';
+
 
 const routes : Routes = [
   {
@@ -28,8 +28,8 @@ const routes : Routes = [
   declarations: [
     AppComponent,
     EditComponent,
-    ViewComponent,
-    ObserverComponent,
+    ViewComponent
+    
   ],
   imports: [
     BrowserModule,
